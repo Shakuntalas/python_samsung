@@ -1,1 +1,0 @@
-this is my first python file in samsung innovation class for python programming language
