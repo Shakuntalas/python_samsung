@@ -1,0 +1,18 @@
+#read as many strings are as uh wish from command line each strings as two parts seprated by space first part is the name of the state
+#second part is its captial now create two list named states and captials and store the states on a cammand line args into states and
+#lly the capilas print the state and capitals in the table format apply proper formating to the ouput 
+import sys
+states =(input("enter a name of the state uh wish : "))
+capitals =(input("enter a capital of state: "))
+for arg in sys.argv[1:]:
+    try:
+        state, capital = arg.split()
+        states.append(state)
+        capitals.append(capital)
+    except ValueError:
+        print(f"Invalid input: '{arg}'. Please provide state and capital separated by a space.")
+        sys.exit(1)
+print(f"{'State':<20} {'Capital':<20}")
+print("-" * 40)
+for state, capital in zip(states, capitals):
+    print(f"{state:<20} {capital:<20}")
